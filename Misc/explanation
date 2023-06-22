@@ -1,0 +1,8 @@
+Explanation:
+
+The min_mult function takes an array p of dimensions of matrices and the number of matrices n as input.
+The function uses dynamic programming to find the minimum number of multiplications required to multiply the matrices.
+The function uses the m array to store the minimum number of multiplications required to multiply matrices i to j. The s array is used to store the position of the optimal split point.
+The function uses OpenMP parallelism to parallelize the three nested loops used to fill the m array.
+The main function takes the input from the user, calls the min_mult function, and prints the minimum number of multiplications.
+Note: The schedule(dynamic) clause is used to distribute the iterations of the outer loop across the threads dynamically, which can improve load balancing when the execution time of the inner loop iterations is variable. The private clause is used to create a private copy of the loop variable for each thread, which is necessary to avoid race conditions.
